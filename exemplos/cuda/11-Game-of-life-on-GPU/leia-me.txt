@@ -1,0 +1,3 @@
+Este projeto requerer glut e glew
+O projeto utiliza como diretório padrão do glew: /opt/glew
+**** Atenção na hora de atualizar o camiho das includes e libs

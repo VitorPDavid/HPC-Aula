@@ -1,0 +1,6 @@
+Fontes:
+	n-bodies-1.0.c  -> sequencial
+	n-bodies-2.0.c  -> OpenMP - número de threads igual ao número de cores
+	n-bodies-2.1.c  -> OpenMP - número de threads igual ao número de cores não usa estrutura
+	n-bodies-2.2.c  -> número de threads é um parâmetro de entrada
+	memory.cpp      -> garante que todas as caches não irão ter nada da execução anterior

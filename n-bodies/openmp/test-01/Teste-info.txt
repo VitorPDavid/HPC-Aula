@@ -1,0 +1,55 @@
+1 - Hardware:
+
+Processador: Intel(R) Xeon(R) E-2226G CPU @ 3.40GHz
+
+Subsistema de memória:
+	  description: L1 cache
+          physical id: 44
+          slot: L1 Cache
+          size: 384KiB
+          capacity: 384KiB
+          capabilities: synchronous internal write-back unified
+          configuration: level=1
+
+          description: L2 cache
+          physical id: 45
+          slot: L2 Cache
+          size: 1536KiB
+          capacity: 1536KiB
+          capabilities: synchronous internal write-back unified
+          configuration: level=2
+
+          description: L3 cache
+          physical id: 46
+          slot: L3 Cache
+          size: 12MiB
+          capacity: 12MiB
+          capabilities: synchronous internal write-back unified
+          configuration: level=3
+
+	  Memória RAM - 32G (2 bancos):	  
+           description: DIMM DDR4 Synchronous 2400 MHz (0.4 ns)
+             product: KHX2400C15/16G
+             vendor: Kingston
+             physical id: 0
+             serial: 8C98ED12
+             slot: ChannelA-DIMM0
+             size: 16GiB
+             width: 64 bits
+             clock: 2400MHz (0.4ns)
+
+2 - Testes
+	Foram executados testes considerando três implementações:
+	1) Sequencial n-bodies-1.0.c
+	2) Paralelo OpenMP - não defini a quantidade de threads. Logo, são utilizados 6 threads, considerando 
+	   que a máquina não tem HT
+	3) Paralelo OpenMP sem estrutura - suspostamente deveria aproveitar melhor a cache, contudo isso não acontece.
+	
+3 - Arquivo script.sh tem os parâmetros das execução do sequencial e 6 threads, considerando que o servidor tem 6 cores.
+	        script-threads.sh tem os parâmetros para tester com 2,4,6 e 8 threads.
+	        
+4 - graficos.py: gera os gráficos de tempo e aceleração. Observar o caminho absoluto dos arquivos csv
+    graficos-MT.py gera os gráficos de tempo e aceleração para diferentes threads (2, 4, 6 e 8)
+	
+5 - Commpilador utilizado: gcc (Ubuntu 9.3.0-10ubuntu2) 9.3.0
+6 - SO Ubuntu 20.04 server - Interface gráfica desativada

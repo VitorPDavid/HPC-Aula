@@ -1,0 +1,30 @@
+CUDACC    = /usr/local/cuda/bin/nvcc
+NVCCFLAGS = -m32 #--compiler-options -fno-strict-aliasing -use_fast_math --host-compilation=C
+CPUCC     = g++
+EXEFILE   = Demo2.bin
+CPPFLAGS  = -g -Wall -O0 -D_DEBUG -m32
+DEFS      =
+INCLUDES  = -I.                             \
+            -I/usr/include/cuda             \
+            -I/usr/local/cuda/include
+
+LIBDIR   =  -L/usr/lib                      \
+            -L/usr/local/cuda/lib
+
+LIBS     =  -lm -lcuda -lcudart
+LINK     =  $(LIBDIR) $(LIBS)
+
+C_COMPILE = $(CPUCC) $(DEFS) $(INCLUDES) $(CPPFLAGS)
+G_COMPILE = $(CUDACC) $(DEFS) $(INCLUDES) $(NVCCFLAGS)
+
+all:    main kernel
+	$(C_COMPILE) $(LINK) main.o kernel.o -o $(EXEFILE)
+
+main:
+	$(C_COMPILE) -c main.cpp
+
+kernel:
+	$(G_COMPILE) -c kernel.cu
+
+clean:
+	rm *.o; rm *.bin

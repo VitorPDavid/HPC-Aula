@@ -1,0 +1,80 @@
+
+
+#include <iostream>
+#include <cstdlib>
+#include <cuda_runtime.h>
+#include <cassert>
+#include <vector>
+#include <cstdio>
+
+#define BLOCOS        2
+#define THREADS      4
+#define REPETICOES  4
+
+#define CHECK_ERROR(call) do {                                                    \
+   if( cudaSuccess != call) {                                                             \
+      std::cerr << std::endl << "CUDA ERRO: " <<                             \
+         cudaGetErrorString(call) <<  " in file: " << __FILE__                \
+         << " in line: " << __LINE__ << std::endl;                               \
+         exit(0);                                                                                 \
+   } } while (0)
+   
+using namespace std;
+
+__global__ void mallocTest(void)
+{
+   char* ptr = new char[256]; //(char*)malloc(123);
+   printf("(%d, %d) Ponteiro: %p\n"	, blockIdx.x, threadIdx.x, threadIdx.x, ptr);
+   delete[] ptr;
+}
+
+__global__ void mallocTest1(void)
+{
+   __shared__ int* data;
+
+   if (threadIdx.x == 0)
+      data = new int[blockDim.x];
+   __syncthreads();
+   
+   if (data == NULL)
+      return;
+
+   data[threadIdx.x] = (threadIdx.x + 1) * 10;
+   __syncthreads();
+   
+   printf("(%d, %d) Valor: %d\n",  blockIdx.x, threadIdx.x, data[threadIdx.x]);
+
+   __syncthreads();
+
+   if (threadIdx.x == 0)
+      delete[] data;
+   
+}
+
+   
+
+int main(int argc, char *argv[]){
+   
+    
+                      
+   size_t free = 0,
+          total = 0,
+          tamanhoHeap = 0;
+   cudaDeviceProp deviceProp;
+
+//   CHECK_ERROR( cudaDeviceSetLimit(cudaLimitMallocHeapSize, 1024*1024*1024) );
+  
+   CHECK_ERROR( cudaGetDeviceProperties(&deviceProp, 0) );
+   CHECK_ERROR( cudaDeviceGetLimit(&tamanhoHeap, cudaLimitMallocHeapSize) );
+   CHECK_ERROR(cudaMemGetInfo(&free, &total));
+   
+   cout << "\nTrabalhando com memoria heap\n" << endl;
+   cout << "Tamanho do heap: " << (tamanhoHeap  / 1024 / 1024) << " MB\n";
+   cout << "Memoria livre: " << (free / 1024 / 1024)   << " MB\n";
+   cout << "Memoria total: " << (total / 1024 / 1024)  << " MB\n";
+   mallocTest1<<<2, 4>>>();
+   CHECK_ERROR(cudaDeviceSynchronize());
+   
+   return EXIT_SUCCESS;
+}
+

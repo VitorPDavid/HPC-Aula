@@ -1,0 +1,33 @@
+EXEFILE   = VBO
+GPUCC     = /usr/local/cuda/bin/nvcc
+CPUCC     = g++
+NVCCFLAGS = -m64 -O3 #-g  -O0 -D_DEBUG -m32 #--compiler-options -fno-strict-aliasing -use_fast_math --host-compilation=C
+CPPFLAGS  = -m64 -O3 #-g  -O0 -D_DEBUG -m32
+DEFS      = 
+
+INCLUDES  = -I.                           \
+            -I/usr/local/cuda/include   
+
+LIBDIR   =  -L/usr/lib64                          \
+            -L/usr/local/cuda/lib64
+
+LIBS     =  -lm -lcuda -lcudart -lGLEW -lGLU -lglut -lGL
+
+LINK     =  $(LIBDIR) $(LIBS)
+
+C_COMPILE = $(CPUCC) $(DEFS) $(INCLUDES) $(CPPFLAGS) 
+G_COMPILE = $(GPUCC) $(DEFS) $(INCLUDES) $(NVCCFLAGS)
+
+
+
+all:    main  kernel
+	$(C_COMPILE)   kernel.o main.o   $(LINK) -o $(EXEFILE)
+
+main:
+	$(C_COMPILE) -c main.cpp
+
+kernel:
+	$(G_COMPILE) -c kernel.cu
+
+clean:
+	rm *.o; rm $(EXEFILE)
