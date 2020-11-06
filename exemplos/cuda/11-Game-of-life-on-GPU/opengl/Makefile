@@ -8,8 +8,8 @@ CPPFLAGS  = --std=c++11 -m64 -Wno-reorder #     -Wunused-variable #-Wno-conversi
 CFLAGS    = --std=c11 -m64	 #     -Wunused-variable #-Wno-conversion-null -Wdelete-non-virtual-dtor
 GPUFLAGS  = --std=c++11 -m64
 DEFS      = $(APPLICATION)  $(VERSION) -DALIGN=64
-INCLUDES  =	-I. -I/usr/local/cuda/include -I/opt/glew/include
-LIBDIR   = -L/usr/lib -L/usr/lib/x86_64-linux-gnu -L/usr/local/cuda/lib64  -L/opt/glew/lib/
+INCLUDES  =	-I. -I/usr/local/cuda/include
+LIBDIR   = -L/usr/lib -L/usr/lib/x86_64-linux-gnu -L/usr/local/cuda/lib64 
 LIBS     =    -lm
 LINK     =  $(LIBDIR) $(LIBS)
 
