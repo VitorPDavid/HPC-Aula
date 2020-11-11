@@ -1,0 +1,40 @@
+callchain: type DWARF
+callchain: stack dump size 1024
+Using CPUID GenuineIntel-6-3C-3
+Compression enabled, disabling build id collection at the end of the session.
+nr_cblocks: 0
+affinity: SYS
+mmap flush: 1
+comp level: 1
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+WARNING: The use of --call-graph=dwarf may require all the user registers, specifying a subset with --user-regs may render DWARF unwinding unreliable, so the minimal registers set (IP, SP) is explicitly forced.
+mmap size 528384B
+thread 0 monitor: 0-3 allowed: any
+cmd_pipe: /tmp/amplxe-tmp-mzamith/perf-pipe-9170-20988104584020
+
+9182:perf-sync:ready:TSC=20988576438235
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.022 MB /home/mzamith/Documents/Projetos/HPC/problems-profile/gol-vtune/Game of life/r000hpc/data.0/temp.dryrun.perf, compressed (original 0.022 MB, ratio is 7.272) ]

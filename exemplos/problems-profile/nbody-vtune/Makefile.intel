@@ -1,0 +1,14 @@
+CPUC      = /opt/intel/bin/icc
+CFLAGS    = -O3  -fopenmp 	 #     -Wunused-variable #-Wno-conversion-null -Wdelete-non-virtual-dtor
+DEFS      =
+INCLUDES  = -I/opt/intel/compilers_and_libraries_2020.4.304/linux/compiler/include
+LIBDIR   = -L/opt/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64
+LIBS     = -lm
+LINK     =  $(LIBDIR) $(LIBS)
+CPU_COMPILE_C  = $(CPUC) $(DEFS) $(INCLUDES) $(CFLAGS)
+
+all:
+	$(CPU_COMPILE_C) main-n-bodies.c  $(LINK)   -o n-bodies-intel
+
+clean:
+	rm n-bodies-intel

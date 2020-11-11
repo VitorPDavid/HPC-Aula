@@ -1,0 +1,5 @@
+65 [140175885059840] INFO mrtehelpers.mrteenv <> - Product libs directory: /opt/intel/vtune_profiler_2020.3.0.612611/lib64
+65 [140175885059840] INFO mrtehelpers.mrteenv <> - File mask: amplxe_samplingmrte_clrprof*
+71 [140175885059840] INFO mrtehelpers.mrteenv <> - File name: libamplxe_samplingmrte_clrprof_1.0.so
+71 [140175885059840] INFO mrtehelpers.mrteenv <> - File mask: amplxe_samplingmrte_clrprof*
+80 [140175885059840] INFO mrtehelpers.mrteenv <> - File name: libamplxe_samplingmrte_clrprof_1.0.so
